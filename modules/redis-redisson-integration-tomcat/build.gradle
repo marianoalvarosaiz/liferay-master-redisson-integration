@@ -1,0 +1,23 @@
+buildscript {
+	dependencies {
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "latest.release"
+	}
+
+	repositories {
+		maven {
+			url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+		}
+	}
+}
+
+dependencies {
+	compileOnly group: "de.ruedigermoeller", name: "fst", version: "2.57"
+	compileOnly group: "org.apache.tomcat.embed", name: "tomcat-embed-core", version: "9.0.56"
+	compileOnly group: "org.objenesis", name: "objenesis", version: "3.2"
+	compileOnly group: "org.redisson", name: "redisson-all", version: "3.17.5"
+	compileOnly group: "org.redisson", name: "redisson-tomcat-9", version: "3.17.5"
+}
+
+liferay {
+	deployDir = file("${appServerDir}/lib")
+}
